@@ -38,7 +38,7 @@ public class DepartmentServiceImplementation implements DepartmentService {
     public Department updateDepartment(Long departmentId, Department department) {
         Department depDB = departmentRepository.findById(departmentId).get();
 
-        // if it is not null and not blank, then serve the value.
+        // if value not null & not blank, then serve the value. ---> IF THERE IS SOMETHING, SERVE IT
         if (Objects.nonNull(department.getDepartmentName()) && !"".equalsIgnoreCase(department.getDepartmentName())) {
             depDB.setDepartmentName(department.getDepartmentName());
         }
@@ -52,5 +52,10 @@ public class DepartmentServiceImplementation implements DepartmentService {
         }
 
         return departmentRepository.save(depDB);
+    }
+
+    @Override
+    public Department fetchDepartmentByName(String departmentName) {
+        return departmentRepository.findByDepartmentName(departmentName);
     }
 }
