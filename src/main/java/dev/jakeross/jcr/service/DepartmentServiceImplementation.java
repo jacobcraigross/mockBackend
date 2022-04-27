@@ -56,6 +56,8 @@ public class DepartmentServiceImplementation implements DepartmentService {
 
     @Override
     public Department fetchDepartmentByName(String departmentName) {
-        return departmentRepository.findByDepartmentName(departmentName);
+        return departmentRepository.findByDepartmentNameIgnoreCase(departmentName);
     }
 }
+
+// video @ 1:31:09 ---------- about to start on validations, adding to the POM.XML file.
