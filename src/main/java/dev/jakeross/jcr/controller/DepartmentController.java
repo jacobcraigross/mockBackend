@@ -4,6 +4,7 @@ import dev.jakeross.jcr.service.DepartmentService;
 import dev.jakeross.jcr.service.DepartmentServiceImplementation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import javax.validation.Valid;
 import java.util.List;
 
 
@@ -15,7 +16,7 @@ public class DepartmentController {
 
     // Post a Department to the DB
     @PostMapping("/departments")
-    public Department saveDepartment(@RequestBody Department department) {
+    public Department saveDepartment(@Valid @RequestBody Department department) {
         return departmentService.saveDepartment(department);
     }
 

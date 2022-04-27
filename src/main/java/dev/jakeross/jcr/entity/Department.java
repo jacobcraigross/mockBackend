@@ -3,6 +3,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Department {
@@ -10,6 +11,7 @@ public class Department {
     @Id // needed for PK
     @GeneratedValue(strategy = GenerationType.AUTO) // needed for PK
     private Long departmentId; // this will be the PK
+    @NotBlank(message = "Department name mandatory.")
     private String departmentName;
     private String departmentAddress;
     private String departmentCode;
