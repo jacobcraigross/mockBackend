@@ -1,12 +1,11 @@
 package dev.jakeross.jcr.controller;
-
 import dev.jakeross.jcr.entity.Department;
 import dev.jakeross.jcr.service.DepartmentService;
 import dev.jakeross.jcr.service.DepartmentServiceImplementation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+
 
 @RestController
 public class DepartmentController {
@@ -49,6 +48,4 @@ public class DepartmentController {
         return departmentService.fetchDepartmentByName(departmentName);
     }
 }
-
-// video @ 1: 25 :32 ------> exact values for the get department by name. ----------
 
